@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Fiver.Security.Bearer.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "Member")]
     [Route("movies")]
     public class MoviesController : Controller
     {

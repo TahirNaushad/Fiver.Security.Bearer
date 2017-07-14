@@ -12,6 +12,12 @@ namespace Fiver.Security.Bearer
         public void ConfigureServices(
             IServiceCollection services)
         {
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Member",
+                    policy => policy.RequireClaim("MembershipId"));
+            });
+
             services.AddMvc();
         }
 
@@ -20,11 +26,13 @@ namespace Fiver.Security.Bearer
             IHostingEnvironment env, 
             ILoggerFactory loggerFactory)
         {
+            app.UseDeveloperExceptionPage();
+
             app.UseJwtBearerAuthentication(new JwtBearerOptions
             {
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
-
+                
                 TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
