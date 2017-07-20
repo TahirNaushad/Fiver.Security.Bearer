@@ -30,7 +30,7 @@ namespace Fiver.Security.Bearer
             ILoggerFactory loggerFactory)
         {
             app.UseDeveloperExceptionPage();
-
+            app.UseStaticFiles();
             app.UseJwtBearerAuthentication(new JwtBearerOptions
             {
                 AutomaticAuthenticate = true,

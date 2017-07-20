@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET Core Bearer Auth</title>
+
+    <script src="~/js/jquery.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <h1>ASP.NET Core Bearer Auth</h1>
+
+        <input type="button" id="GetToken" value="Get Token" />
+        <div id="token"></div>
+        <hr />
+        <input type="button" id="UseToken" value="Use Token" />
+        <div id="result"></div>
+    </div>
+    <script>
+        $(function () {
+            $("#GetToken").click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Create", "Token")',
+                    data: JSON.stringify({ "Username": "james", "Password": "bond" }),
+                    contentType: "application/json"
+                }).done(function (data, statusText, xhdr) {
+                    $("#token").text(data);
+                }).fail(function (xhdr, statusText, errorText) {
+                    $("#token").text(errorText);
+                });
+            });
+
+            $("#UseToken").click(function () {
+                $.ajax({
+                    method: 'GET',
+                    url: '@Url.Action("Get", "Movies")',
+                    beforeSend: function (xhdr) {
+                        xhdr.setRequestHeader("Authorization", "Bearer " + $("#token").text());
+                    }
+                }).done(function (data, statusText, xhdr) {
+                    $("#result").text(JSON.stringify(data));
+                }).fail(function (xhdr, statusText, errorText) {
+                    $("#result").text(JSON.stringify(xhdr));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
