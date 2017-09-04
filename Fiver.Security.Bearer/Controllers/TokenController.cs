@@ -21,7 +21,7 @@ namespace Fiver.Security.Bearer.Controllers
                                 .AddIssuer("Fiver.Security.Bearer")
                                 .AddAudience("Fiver.Security.Bearer")
                                 .AddClaim("MembershipId", "111")
-                                .AddExpiry(2)
+                                .AddExpiry(1)
                                 .Build();
 
             //return Ok(token);
