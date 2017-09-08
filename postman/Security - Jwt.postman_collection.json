@@ -1,0 +1,48 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Security - Jwt",
+		"_postman_id": "505d474d-f1a7-40ff-7292-6e8d2151d005",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:34704/token",
+			"request": {
+				"url": "http://localhost:34704/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"james\",\n\t\"password\": \"bond\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:34704/movies",
+			"request": {
+				"url": "http://localhost:34704/movies",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqYW1lcyBib25kIiwianRpIjoiZDEwZTlmMGEtYzhlYy00NWRhLWJmNzQtODAyZjhkOGNiYTlhIiwiTWVtYmVyc2hpcElkIjoiMTExIiwiZXhwIjoxNTA0ODc3NzcxLCJpc3MiOiJGaXZlci5TZWN1cml0eS5CZWFyZXIiLCJhdWQiOiJGaXZlci5TZWN1cml0eS5CZWFyZXIifQ.Lvoc1J56ctvsTJOHJkP7-X_EBYDq1exLuzdcYIF5Yso",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

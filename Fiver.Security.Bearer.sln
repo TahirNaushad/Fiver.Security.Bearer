@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiver.Security.Bearer", "Fiver.Security.Bearer\Fiver.Security.Bearer.csproj", "{AE4B3708-DDF7-40FA-9AF1-EFE51B7B92D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiver.Security.Bearer.Helpers", "Fiver.Security.Bearer.Helpers\Fiver.Security.Bearer.Helpers.csproj", "{5BCA0755-2E3B-488B-93E5-DBB65EC37848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiver.Security.Bearer.Helpers", "Fiver.Security.Bearer.Helpers\Fiver.Security.Bearer.Helpers.csproj", "{5BCA0755-2E3B-488B-93E5-DBB65EC37848}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{750597A8-020C-4E7A-9EDB-7B0FA577E7F1}"
+	ProjectSection(SolutionItems) = preProject
+		postman\Security - Jwt.postman_collection.json = postman\Security - Jwt.postman_collection.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B40779B-B0D7-4B9A-9D95-49B30E9ADA9E}
 	EndGlobalSection
 EndGlobal
