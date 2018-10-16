@@ -12,7 +12,7 @@ namespace Fiver.Security.Bearer.Controllers
         [HttpPost]
         public IActionResult Create([FromBody]LoginInputModel inputModel)
         {
-            if (inputModel.Username != "james" && inputModel.Password != "bond")
+            if (inputModel.Username != "james" || inputModel.Password != "bond")
                 return Unauthorized();
 
             var token = new JwtTokenBuilder()
