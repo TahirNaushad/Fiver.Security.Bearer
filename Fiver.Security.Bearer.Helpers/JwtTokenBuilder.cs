@@ -48,7 +48,7 @@ namespace Fiver.Security.Bearer.Helpers
 
         public JwtTokenBuilder AddClaims(Dictionary<string, string> claims)
         {
-            this.claims.Union(claims);
+            this.claims = this.claims.Union(claims).ToDictionary(k => k.Key, v => v.Value);
             return this;
         }
 
